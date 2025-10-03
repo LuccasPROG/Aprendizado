@@ -22,7 +22,6 @@ Aprendizado/
 ```
 
 - **aulas/**: Exercícios e exemplos das aulas.  
-- **MeusProjetos/**: Projetos próprios desenvolvidos durante o aprendizado.  
 
 ---
 
