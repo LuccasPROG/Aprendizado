@@ -17,8 +17,6 @@ Aprendizado/
 │   ├── aula3.py
 │   ├── aula4.py
 │   └── ...
-├── MeusProjetos/
-│   └── (projetos pessoais)
 ```
 
 - **aulas/**: Exercícios e exemplos das aulas.  
