@@ -1,0 +1,21 @@
+{
+  "nome": "Lucas",
+  "sobrenome": "evelinton",
+  "enderecos": [
+    {
+      "rua": "R1",
+      "numero": 32
+    },
+    {
+      "rua": "R2",
+      "numero": 55
+    }
+  ],
+  "altura": 1.8,
+  "numeros_preferidos": [
+    7,
+    1
+  ],
+  "dev": true,
+  "nada": null
+}
