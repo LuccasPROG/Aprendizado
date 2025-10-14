@@ -7,8 +7,30 @@
 # refazer = todo ['fazer café']
 # refazer = todo ['fazer café', 'caminhar']
 import os
-tarefas = []
+import json
+def ler (tarefas, caminho_arquivo):
+    dados = []
+    try:
+        with open(caminho_arquivo, 'r', encoding='utf8') as arquivo:
+            dados = json.load(arquivo)
+    except FileNotFoundError:
+        print('Esse arquivo não existe')
+        salvar(tarefas, caminho_arquivo)
+    return dados
+
+def salvar(tarefas, caminho_arquivo):
+        dados = tarefas
+        with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
+            dados = json.dump(
+                tarefas,
+                arquivo,
+                indent=2)
+        return dados
+
+CAMINHO_ARQUIVO = 'aula57.json'
+tarefas = ler([], CAMINHO_ARQUIVO)
 refazer_tarefas = []
+
 while True:
     print('Comandos : listar, desfazer, refazer, sair, clear')
     comando = str(input('Digite uma Tarefa ou comando: ')).strip()
@@ -28,6 +50,7 @@ while True:
             print('TAREFAS:')
             for tarefa in tarefas:
                 print(tarefa)
+            salvar(tarefas, CAMINHO_ARQUIVO)
         else:
             print()
             print('TAREFAS:')
@@ -41,9 +64,10 @@ while True:
             print('TAREFAS:')
             for tarefa in tarefas:
                 print(tarefa)
-
+            salvar(tarefas, CAMINHO_ARQUIVO)
     elif comando == 'sair':
         break
 
     elif comando:
         tarefas.append(comando)
+        salvar(tarefas, CAMINHO_ARQUIVO)
