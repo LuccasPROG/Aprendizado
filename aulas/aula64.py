@@ -16,8 +16,11 @@ p1 = Pessoa('Carlos', 10)
 p2 = Pessoa('Gabriele', 18)
 dados = p1.__dict__, vars(p2)
 
-def salvar(caminho_do_arquivo, dado):
-    with open(caminho_do_arquivo, 'w', encoding='utf8') as arquivo:
-        json.dump(dado, arquivo, indent=2)
-        
-salvar(CAMINHO_DO_ARQUIVO, dados)
+def fazer_dump():
+    with open(CAMINHO_DO_ARQUIVO, 'w', encoding='utf8') as arquivo:
+        print('Fazendo Dump')   
+        json.dump(dados, arquivo, indent=2)
+
+if __name__ == '__MAIN__':
+    print('Ele é o __MAIN__')
+    fazer_dump()

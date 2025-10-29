@@ -1,6 +1,7 @@
 import json
-from aula64 import CAMINHO_DO_ARQUIVO, Pessoa
+from aula64 import CAMINHO_DO_ARQUIVO, Pessoa, fazer_dump
 
+# fazer_dump()
 with open(CAMINHO_DO_ARQUIVO, 'r', encoding='utf8') as arquivo:
     pessoas = json.load(arquivo)
 
