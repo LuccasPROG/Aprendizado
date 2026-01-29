@@ -1,4 +1,3 @@
-#Feito por min DARKNESS jogo do impar ou par um pouco intermediario
 import os
 print('====================')
 print('Jogo do Par ou Impar')

@@ -16,7 +16,7 @@ try:
         print('-='*20)
         if opcao == 1:
             soma = n1 + n2
-            print(f'A soma do numero {n1} + {n2} é igual a {soma}') 
+            print(f'A soma do numero {n1} + {n2} é igual a {soma}')
             print('-='*20)
         elif opcao == 2:
             sub = n1 - n2
@@ -36,6 +36,8 @@ try:
             print('ERRO: Essa Opção não Existe, Tente novamente!')
 except:
     print('ERRO: Digite um Numero Inteiro!')
+    n1 = int(input('Digite o Primeiro Valor:'))
+    n2 = int(input('Digite o Segundo Valor:'))
 finally:
     print('>>> Obrigado por usar a calculadora <<<')
     print()
