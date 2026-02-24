@@ -1,0 +1,63 @@
+📦 Sistema de Controle de Estoque em Python
+📌 Sobre o Projeto
+
+Este projeto consiste em um sistema simples de controle de estoque desenvolvido em Python, executado em modo console.
+
+O objetivo é permitir que pequenos estabelecimentos comerciais realizem o cadastro e o controle básico de seus produtos, garantindo organização e validação de dados.
+
+O sistema utiliza:
+
+✅ Listas
+
+✅ Dicionários
+
+✅ Funções
+
+✅ Estrutura de repetição
+
+✅ Validação de dados
+
+🚀 Funcionalidades
+
+O sistema possui um menu interativo com as seguintes opções:
+
+1️⃣ Cadastrar Produto
+
+Solicita nome, preço, quantidade e código
+
+Não permite preço ou quantidade negativos
+
+Impede cadastro com código duplicado
+
+2️⃣ Calcular Total de Produtos em Estoque
+
+Soma a quantidade de todos os produtos cadastrados
+
+Exibe o total armazenado
+
+3️⃣ Mostrar Produtos
+
+Lista todos os produtos cadastrados
+
+Exibe nome, preço, quantidade e código
+
+4️⃣ Sair
+
+Encerra o sistema
+
+🛠️ Estrutura de Dados
+
+O estoque é representado por:
+
+estoque = [
+    {
+        "nome": "Produto A",
+        "preco": 10.0,
+        "quantidade": 5,
+        "codigo": 101
+    }
+]
+
+O estoque é uma lista
+
+Cada produto é um dicionário
