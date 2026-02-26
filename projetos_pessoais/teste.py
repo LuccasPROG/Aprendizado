@@ -1,25 +1,19 @@
-def criar_funcao(func):
-    
-    def interna(*args, **kwargs):
-        for arg in args:
-            e_string(args)
+from produtos.produto_modulos import produtos 
+import copy
 
-        resultado = func(*args, **kwargs)
+novos_produtos = copy.deepcopy(produtos)
 
-        return resultado
-    
-    return interna
+novos_produtos = [{**produto, 'preco': round(produto['preco'] * 1.10, 2)}
+                    for produto in novos_produtos ]
+
+Produtos_Ordenado = sorted(copy.deepcopy(novos_produtos), key=lambda a : a['nome'], reverse=True)
 
 
-def inverte_string(string):
-    return string[::-1]
 
 
-def e_string(parametro):
-    if not isinstance(parametro, str):
-        raise TypeError('ERROR: Digite uma letra Não Número!')
+print('copia antiga')
+print(*produtos, sep='\n')
+print()
+print('copia nova')
+print(*Produtos_Ordenado, sep='\n')
 
-inverte_string_checando_parametro = criar_funcao(inverte_string)
-
-invertida = inverte_string_checando_parametro('123')
-print(invertida)
