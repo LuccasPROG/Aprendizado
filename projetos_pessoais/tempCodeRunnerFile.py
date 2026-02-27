@@ -1,0 +1,1 @@
+lista = ['ovo', 'goiabada', 'buceta']
