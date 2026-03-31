@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Login</title>
+
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        label{
+            cursor: pointer;
+            /* display: block; */
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get" target="_blank" >
+        <section>
+            <h1>Viage Pelo Mundo, pela Economia Brasil</h1>
+            <p>Seja bem vindo, Painel de viajem</p>
+                <legend> Painel de Login</legend>
+                <p>
+                    <label>
+                    Login: <input type="text" id="login" name="logins" placeholder="Seu Login" required>
+                    </label>
+                </p>
+                <p>
+                   senha: <input type="password" id="senha" name="senhas" placeholder="Sua Senha"required>
+                </p>
+                <p>
+                    Genero: <br>
+                    <label for="Masculino">Masculino:</label>
+                    <input type="radio" id="Masculino" name="genero" value="Masculino"><br>
+                    <label for="Feminino">Feminino:</label>
+                    <input type="radio" id="Feminino" name="genero" value="Feminino"><br>
+                    <label for="Outros">Outros:</label>
+                    <input type="radio" id="Outros" name="genero" value="Outros"><br>
+
+                </p>
+                <p><button type="submit">Enviar</button>
+                <button type="reset">resetar</button></p>
+        </section>
+    </form>
+</body>
+</html>

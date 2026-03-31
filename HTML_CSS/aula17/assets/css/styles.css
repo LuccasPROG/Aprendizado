@@ -1,0 +1,22 @@
+html{
+    /* scroll vai desse a pagina suavemente */
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+ }
+
+ .pai{
+    height: 100vh;
+    background: yellow;
+ }
+ .pai-one{
+    height: 100vh;
+    background: blueviolet;
+ }
+
+ .pai-two{
+    height: 100vh;
+    background: aqua;
+ }

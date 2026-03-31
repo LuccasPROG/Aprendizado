@@ -1,0 +1,14 @@
+::placeholder{
+    color: red;
+}
+
+/* p::first-letter{
+    font-size: 50px;
+    display: block;
+    float: left;
+    margin: 0 10px 10 0;
+}
+p::selection {
+    background-color: black;
+    color: white;
+} */
