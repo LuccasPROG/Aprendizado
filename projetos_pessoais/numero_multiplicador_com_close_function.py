@@ -1,10 +1,8 @@
 def criar_multiplicador(multiplicador):
-    def numero(numeros):
-        print(f'{numeros * multiplicador}')
-    return numero
+    def interna(numero):
+        print(f'{multiplicador * numero}')
+    return interna
 
-numero_dobro = criar_multiplicador(2)
-numero_triplo = criar_multiplicador(3)
+dobro = criar_multiplicador(int(input('Digite o numero multiplicador: ')))
 
-numero_dobro(5)
-numero_triplo(3)
+dobro(int(input('Digite o numero que deseja multiplicar: ')))

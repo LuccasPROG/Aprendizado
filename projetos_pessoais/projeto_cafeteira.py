@@ -2,7 +2,7 @@
 def linha ():
     print('-='*10)
 
-comida =[{'nome':'Croissant', 'preco': 4.50},
+comida = [{'nome':'Croissant', 'preco': 4.50},
          {'nome':'Pão', 'preco': 0.50},
          {'nome': 'Rosquinha', 'preco': 3.50}]
 

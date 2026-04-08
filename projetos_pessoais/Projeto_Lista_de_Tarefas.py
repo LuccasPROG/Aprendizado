@@ -25,27 +25,27 @@ def mostrar_lista(lista):
     for i, tarefa in enumerate(lista):
 
         if tarefa['concluida']:
-            stats = '\033[1;32mConcluida\033[m'
+            status = '\033[1;32mConcluida\033[m'
         else:
-            stats = '\033[1;31mPendente\033[m' 
+            status = '\033[1;31mPendente\033[m' 
             
-        print(f"{i + 1}. {tarefa['nome']} - {stats}")
+        print(f"{i + 1}. {tarefa['nome']} - {status}")
         time.sleep(0.5)
 
 
-def concluir_tarefas(indice, lista):
-    if 0 <= indice < len(lista):
-        lista[indice]['concluida'] = True
-        print(f'\033[32m o numero {indice + 1} concluido com sucesso!\033[m')
+def concluir_tarefas(status, lista):
+    if 0 <= status < len(lista):
+        lista[status]['concluida'] = True
+        print(f'\033[32m o numero {status + 1} concluido com sucesso!\033[m')
         time.sleep(1)
     else:
         print('\033[1;31mERROR: Numero Invalido\033[m')
 
 
-def remover_tarefa(indice, lista):
-    if 0 <= indice < len(lista):
-        lista.pop(indice)
-        print(f'\033[32m o numero {indice + 1} removido com sucesso!\033[m')
+def remover_tarefa(status, lista):
+    if 0 <= status < len(lista):
+        lista.pop(status)
+        print(f'\033[32m o numero {status + 1} removido com sucesso!\033[m')
         time.sleep(1)
     else:
         print('\033[1;31mERROR: Numero Invalido\033[m')
@@ -80,9 +80,9 @@ while True:
         mostrar_lista(lista)
     elif opcao == 3:
         try:
-            indice = int(input('Digite o numero da tarefa que deseja concluir:'))
-            indice -= 1
-            concluir_tarefas(indice, lista)
+            status = int(input('Digite o numero da tarefa que deseja concluir:'))
+            status -= 1
+            concluir_tarefas(status, lista)
         except ValueError:
             print('\033[31mERROR: Digite um Número inteiro!\033[m')
             time.sleep(1)

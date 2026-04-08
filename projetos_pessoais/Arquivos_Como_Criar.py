@@ -19,7 +19,7 @@
 # json.dump = Gera um arquivo json
 # json.load
 CAMINHO_ARQUIVO = 'lista.txt'
-lista = ['ovo', 'goiabada', 'buceta']
+lista = ['ovo', 'goiabada']
 
 with open(CAMINHO_ARQUIVO, 'w+') as arquivo:
     arquivo.write('lista1\n')
