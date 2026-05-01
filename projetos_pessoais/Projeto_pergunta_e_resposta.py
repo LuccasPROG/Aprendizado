@@ -21,7 +21,7 @@ while contador < len(perguntas):
     pergunta = perguntas[contador]
     print(f"Pergunta: {pergunta['Pergunta']}")
     print('Opções:')
-    for i, opcao in enumerate(pergunta['Opções'],start=1):
+    for i, opcao in enumerate(pergunta['Opções'], start=1):
         print(f'{i}) {opcao}')    
     opcao = int(input('Opções:'))
 
