@@ -13,8 +13,8 @@ def adiciona_repr(cls):
 
 
 def meu_planeta(metodo):
-    def interno(self, *args, **kwargas):
-        resultado = metodo(self, *args, **kwargas)
+    def interno(self, *args, **kwargs):
+        resultado = metodo(self, *args, **kwargs)
 
         if 'Terra' in resultado:
             return('Você não é um alienigine')
