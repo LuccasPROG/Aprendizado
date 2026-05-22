@@ -1,3 +1,5 @@
+#Context Manager no Python
+
 class MyOpen:
 
     def __init__(self, caminho_arquivo, modo):
