@@ -1,5 +1,4 @@
 
-
 def meu_repr(self):
     class_name = type(self).__name__
     class_dict = self.__dict__
@@ -29,6 +28,8 @@ def meu_planeta(metodo):
 #         class_dict = self.__dict__
 #         class_repr = f'{class_name}({class_dict})'
 #         return class_repr
+
+
 @adiciona_repr
 class Time:
     def __init__(self, nome):
