@@ -20,6 +20,10 @@ class Conta(abc.ABC):
     def detalhes(self, msg: str='') -> None:
         print(f'O seu saldo é {self.saldo:.2f} {msg}')    
 
+    def __repr__(self) -> str:
+        class_name = type(self).__name__
+        attr = f'({self.agencia!r}, {self.conta!r}. {self.saldo!r})'
+        return f'{class_name}{attr}'
 
 class ContaPoupanca(Conta):
     def sacar(self, valor):
@@ -34,11 +38,11 @@ class ContaPoupanca(Conta):
         return self.saldo
 
 class ContaCorrente(Conta):
-    def __init__(self, agencia: int, conta: int, saldo:float=0, limite:float=0) -> float:
+    def __init__(self, agencia: int, conta: int, saldo:float=0, limite:float=0):
         super().__init__(agencia, conta, saldo)
         self.limite = limite
 
-    def sacar(self, valor):
+    def sacar(self, valor: float) -> float:
         valor_pos_saque = self.saldo - valor
         limite_maximo = -self.limite
 
@@ -50,6 +54,11 @@ class ContaCorrente(Conta):
         print(f'Seu Limite é {-limite_maximo:.2f}')
         self.detalhes(f'(SAQUE NEGADO {valor})')
         return self.saldo
+
+    def __repr__(self) -> str:
+        class_name = type(self).__name__
+        attr = f'({self.agencia!r}, {self.conta!r}. {self.saldo!r}, {self.limite!r})'
+        return f'{class_name}{attr}'
 
 if __name__ == '__main__':
     cc1 = ContaCorrente(111, 222, 0, 100)
