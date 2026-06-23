@@ -10,7 +10,7 @@ pessoa = {'nome': 'José', #KWARGS | desempacotamente e empacotamento de nomeado
           }
 
 dados_pessoa = {'idade': 18,
-                'peso': 120
+                'peso': 112
                 }
 
 pessoa_completa = {**pessoa, **dados_pessoa} # cria um dicionario somente!
@@ -28,4 +28,4 @@ configuracoes = { #outro exemplo
     'A4': 4,
     'A5': 5,
                         }
-mostro_argumentos_nomeados(**configuracoes)
+mostro_argumentos_nomeados(**pessoa_completa)
