@@ -1,18 +1,8 @@
-class Arma:
-    def __init__(self, nome):
-        self.nome = nome
+print('-='* 20)
+print('Tabuada do Chat GPT T_T')
+print('-='* 20)
 
-    def atacar(self):
-        return f'{self.nome} Atacou!'
+numero = int(input('Digite um Numero para a tabuada: '))
 
-class Jogador:
-    def __init__(self,nome):
-        self.nome = nome
-        self.arma = None
-
-espada = Arma('Espada')
-jogador = Jogador('Lucas')
-
-jogador.arma = espada
-
-print(jogador.arma.atacar())
+for item in range(1,11):
+    print(f'{numero} * {item} = {numero * item}')
