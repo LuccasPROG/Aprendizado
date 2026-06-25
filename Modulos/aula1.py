@@ -15,9 +15,8 @@ from datetime import datetime
  
 data_str = '2022-04-20 07:49:23'
 data_format = '%Y-%m-%d %H:%M:%S'
-agora = datetime.now().year
 # data = datetime(2022, 4, 20, 7, 49, 23,)
+
 data = datetime.strptime(data_str, data_format)
 
-print(agora)
 print(data)
