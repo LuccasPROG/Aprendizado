@@ -53,8 +53,8 @@ for linha in tabela.index:
 
     pyautogui.click(x=615, y=788)
     obs = str(tabela.loc[linha, 'obs'])
-    pyautogui.write(obs)
-
+    if obs != 'nan':
+        pyautogui.write(obs)
     pyautogui.click(x=840, y=890)
 
     pyautogui.scroll(150)
