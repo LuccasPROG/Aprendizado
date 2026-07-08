@@ -17,3 +17,7 @@ shutil.rmtree(NOVA_PASTA)
 
 shutil.copytree(PASTA_ORIGINAL, NOVA_PASTA)
 shutil.move(NOVA_PASTA, NOVA_PASTA + 'teste2')
+
+#renomeia de fato a Nova pasta!
+# novo_nome = os.path.join(DOCUMENTS, "teste2")
+# shutil.move(NOVA_PASTA, novo_nome)
