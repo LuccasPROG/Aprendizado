@@ -18,8 +18,7 @@ import pprint
 
 NOME_ARQUIVO = 'aula14.json'
 CAMINHO_ABSOLUTO_ARQUIVO = os.path.join(os.path.dirname(__file__), NOME_ARQUIVO)
-print(CAMINHO_ABSOLUTO_ARQUIVO)
-filme = {
+filme = { 
     'title': 'O Senhor dos Anéis: A Sociedade do Anel',
     'original_title': 'The Lord of the Rings: The Fellowship of the Ring',
 
