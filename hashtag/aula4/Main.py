@@ -1,39 +1,63 @@
 import streamlit as st
-from openai import OpenAI
+from google import genai
 
+modelo_ia = genai.Client(api_key="")
 
+st.write("# Chat com IA")
 
+if "lista_mensagens" not in st.session_state:
+    st.session_state["lista_mensagens"] = [
+    {
+        "role": "system",
+        "content": (
+            "Você é um assistente virtual chamado Sextafeira. "
+            "Converse normalmente com qualquer pessoa. "
+            "Somente quando o usuário escrever exatamente 'edna' "
+            "(ignorando maiúsculas e minúsculas), responda com uma mensagem "
+            "especial dizendo que edna é uma irma incrível, que o irmao dela "
+            "é muito inteligente por ter criado você e termine com e de elogios "
+            "para ela para que ela se sinta feliz e fala o que o irmao dela e muito incrivel e bonito"
+            "'Sou a Sextafeira, prazer!'. "
+            "Em qualquer outra situação, responda normalmente e se perguntarem quem te criou mencione "
+            "o criador Lucas e um genio sem comparação de elogios mais nao mencione."
+        )
+    }
+        ]#serve para deixa palavras programadas para a ia fazer
+# Mostra o histórico
+for mensagem in st.session_state["lista_mensagens"]:
+    if mensagem['role'] != 'system':
+        st.chat_message(mensagem["role"]).write(mensagem["content"])
 
-
-modelo_ia = OpenAI(api_key='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')
-
-
-st.write('# Chat com IA')
-
-if not 'lista_mensagens' in st.session_state:
-    st.session_state['lista_mensagens'] = []
-
-
-texto_usuario = st.chat_input('Digite sua mensagem')
-
-for mensagem in st.session_state['lista_mensagens']:
-    role = mensagem['role']
-    content = mensagem['content']
-    st.chat_message(role).write(content)
-    
-# hugging face criar minha propria IA
+texto_usuario = st.chat_input("Digite sua mensagem")
 
 if texto_usuario:
-    st.chat_message('user').write(texto_usuario)
-    mensagem_usuario = {'role': 'user', 'content': texto_usuario}
-    st.session_state['lista_mensagens'].append(mensagem_usuario)
+    # Mostra e salva a mensagem do usuário
+    st.chat_message("user").write(texto_usuario)
 
-    resposta_ia = modelo_ia.chat.completions.create(
-        messages=st.session_state['lista_mensagens'], 
-        model='gpt-4o')
+    mensagem_usuario = {
+        "role": "user",
+        "content": texto_usuario
+    }
+    st.session_state["lista_mensagens"].append(mensagem_usuario)
 
-    texto_resposta_ia = resposta_ia.choices[0].message.content
+    # Monta o histórico
+    historico = ""
+    for mensagem in st.session_state["lista_mensagens"]:
+        historico += f"{mensagem['role']}: {mensagem['content']}\n"
 
-    st.chat_message('assistant').write(resposta_ia)
-    mensagem_ia = {'role': 'assistant', 'content': texto_resposta_ia}
-    st.session_state['lista_mensagens'].append(mensagem_ia)
+    # Chama o Gemini
+    with st.spinner('Pensando...'):
+        resposta_ia = modelo_ia.models.generate_content(
+            model="gemini-3.5-flash",
+            contents=historico
+        )
+
+    texto_resposta_ia = resposta_ia.text
+
+    # Mostra e salva a resposta
+    st.chat_message("assistant").write(texto_resposta_ia)
+
+    st.session_state["lista_mensagens"].append({
+        "role": "assistant",
+        "content": texto_resposta_ia
+    })

@@ -1,7 +1,19 @@
+import os
 import csv
 
-with open('pessoas.csv', 'r', encoding='utf8') as arquivo:
-    leitor = csv.reader(arquivo)
+Caminho =   os.path.join(os.path.dirname(__file__), 'pessoas.csv')
 
-    for linha in leitor:
-        print(linha)
+with open(Caminho, 'r') as arquivo:
+    leitor = csv.DictReader(arquivo) #lé como arquivo em dicionario
+
+
+    for i in leitor:
+        print(i)
+
+
+# with open(Caminho, 'r') as arquivo: 
+#     leitor = csv.reader(arquivo) #Le como arquivo em lista
+
+
+#     for i in leitor:
+#         print(i)
