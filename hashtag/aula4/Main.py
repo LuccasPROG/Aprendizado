@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 
-modelo_ia = genai.Client(api_key="")
+modelo_ia = genai.Client()
 
 st.write("# Chat com IA")
 
