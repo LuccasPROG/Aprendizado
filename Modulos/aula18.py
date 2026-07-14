@@ -4,8 +4,7 @@ import string as s
 from secrets import SystemRandom as Sr
 
 print(''.join(Sr().choices(s.ascii_letters + s.digits + s.punctuation, k=64)))
-
-
+# print(secrets.token_urlsafe(32)) feito para url
 # random = secrets.SystemRandom()
 
 # # print(secrets.randbelow(100))
