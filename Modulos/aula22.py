@@ -26,6 +26,7 @@ def criar_arquivos(qtd: int, zip_dir: Path):
         with open(zip_dir / f'{texto}.txt', 'w') as arquivo:
             arquivo.write(texto)
 
+
 criar_arquivos(10, CAMINHO_ZIP_DIR)
 
 # Criando um zip e adicionando arquivos
