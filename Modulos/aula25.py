@@ -17,3 +17,6 @@
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 # - Os cabeçalhos HTTP (Content-Type, Accept)
 # - O corpo da mensagem (Pode estar em vazio em alguns casos)
+
+#EXEMPLO Para criar a localhost com venv ja ativado
+# python -m http.server -d aula25_site/ 3333                         
