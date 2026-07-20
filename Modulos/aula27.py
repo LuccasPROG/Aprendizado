@@ -29,4 +29,4 @@ if top_jobs_heads is not None:
     
     if article is not None:
         for p in article.select('p'):
-            print(re.sub(r'\s{1,}',' ', p.text))
+            print(re.sub(r'\s{1,}',' ', p.text)) 
