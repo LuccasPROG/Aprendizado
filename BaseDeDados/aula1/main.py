@@ -9,11 +9,11 @@ connection = sqlite3.connect(DB_FILE)
 cursor = connection.cursor()
 TABLE_NAME = 'customers'
 
-# Danger: fazendo delete sem where
+# Danger: fazendo delete sem where MUITO CUIDADO
 cursor.execute(
     f'DELETE FROM {TABLE_NAME}'
 )
-#MUITO CUIDADO
+#DELETE mais CUIDADOSO
 cursor.execute(
     f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
 )
@@ -51,9 +51,23 @@ connection.commit()
 #Insert all value
 # cursor.execute('')
 
-cursor.close()
-connection.close()
 
 
 if __name__ == '__main__':
     print(sql)
+    # DELETA COISAS DANGER
+    cursor.execute(f'DELETE FROM {TABLE_NAME} WHERE id = 3')
+    cursor.execute(f'DELETE FROM {TABLE_NAME} WHERE id = 1')
+    
+    #UPDATE ATUALIZA COISAS
+    cursor.execute(f'UPDATE {TABLE_NAME} '
+                   'SET name="QUALQUER", weight=8  WHERE id = 2')
+
+    connection.commit()
+    cursor.execute(f'SELECT * FROM {TABLE_NAME}')
+    for row in cursor.fetchall():
+        _id, name, weight = row
+        print(_id, name, weight)
+
+    cursor.close()
+    connection.close()
