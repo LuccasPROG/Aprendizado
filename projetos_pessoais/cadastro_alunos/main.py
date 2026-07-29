@@ -12,18 +12,28 @@ class Aluno:
     def resultados(self):
         media = self.calcula_media()
         if media >= 7:
-            return ('aprovado')
+                return ('aprovado')
         else:
-            return ('reprovado')
+                return ('reprovado')
             
     def exibir(self):
 
         print(f'O aluno {self.nome} com a notas {self.nota1} e {self.nota2} foi {self.resultados()} com a media {self.calcula_media()}')
 
+def validacao_notas():
+    while True:
+        nota = float(input('Digite a nota: '))
+        if 0 <= nota <= 10:
+            return nota
+        else:
+             print('Nota invalida: digite uma nota entre 0 e 10 !')
+
+#Inicio
+
 nome = str(input('Digite o seu nome: '))
 idade = int(input('Digite sua idade: '))
-nota1 = float(input('Digite a primeira nota: '))
-nota2 = float(input('Digite a segunda nota: '))
+nota1 = validacao_notas()
+nota2 = validacao_notas()
 l1 = Aluno(nome, idade, nota1, nota2)
 l1.exibir()
 
