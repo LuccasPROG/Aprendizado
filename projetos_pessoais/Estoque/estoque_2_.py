@@ -105,7 +105,7 @@ class Produtos:
                         
                     codigo = int(input('Digite o codigo do produto: '))
 
-                    obg =Verifica_Produtos(nome, preco, quantidade, codigo, self.estoque)
+                    obg = Verifica_Produtos(nome, preco, quantidade, codigo, self.estoque)
                     obg.cadastro_de_produtos()
                     break
 

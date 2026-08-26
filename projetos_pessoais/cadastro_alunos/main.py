@@ -30,7 +30,7 @@ def validacao_notas():
 
 #Inicio
 
-nome = str(input('Digite o seu nome: '))
+nome = input('Digite o seu nome: ')
 idade = int(input('Digite sua idade: '))
 nota1 = validacao_notas()
 nota2 = validacao_notas()

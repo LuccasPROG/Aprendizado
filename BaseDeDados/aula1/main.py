@@ -58,12 +58,13 @@ if __name__ == '__main__':
     # DELETA COISAS DANGER
     cursor.execute(f'DELETE FROM {TABLE_NAME} WHERE id = 3')
     cursor.execute(f'DELETE FROM {TABLE_NAME} WHERE id = 1')
-    
+
     #UPDATE ATUALIZA COISAS
     cursor.execute(f'UPDATE {TABLE_NAME} '
                    'SET name="QUALQUER", weight=8  WHERE id = 2')
 
     connection.commit()
+    
     cursor.execute(f'SELECT * FROM {TABLE_NAME}')
     for row in cursor.fetchall():
         _id, name, weight = row
