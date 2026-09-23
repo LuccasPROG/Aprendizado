@@ -144,15 +144,19 @@ with connection:
         sql = (f'UPDATE {TABLE_NAME} set name=%s, age=%s where id= %s')
 
         result = cursor.execute(sql, ("escanor", 107, 4))
-        connection.commit()
 
         cursor.execute(f'SELECT * FROM {TABLE_NAME}')
 
+        print('FOR 1:')
         for row in cursor.fetchall():
-            # _id, name, age = row.values()
-            # print(_id, name, age)
             print(row)
-        print(f'foi modificado {result} Row')
 
+
+        print()
+        print('FOR 2:')
+        cursor.scroll(0, 'absolute')
+        for row in cursor.fetchall():
+            print(row)
+    connection.commit()
 
 
