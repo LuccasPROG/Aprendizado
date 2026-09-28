@@ -143,20 +143,27 @@ with connection:
 
         sql = (f'UPDATE {TABLE_NAME} set name=%s, age=%s where id= %s')
 
-        result = cursor.execute(sql, ("escanor", 107, 4))
+        cursor.execute(sql, ("escanor", 107, 4))
 
-        cursor.execute(f'SELECT * FROM {TABLE_NAME}')
+        cursor.execute(
+            f'Select id from {TABLE_NAME} order by id desc limit 1'
+        )
 
-        print('FOR 1:')
-        for row in cursor.fetchall():
+        lastIdFromSelect = cursor.fetchone()
+        
+        resultfromselect = cursor.execute(f'SELECT * FROM {TABLE_NAME}')
+
+        data6 = cursor.fetchall()
+
+        for row in data6:
             print(row)
+        print('ResultFromSelect', resultfromselect)
+        print('len(data6)', len(data6))
+        print('rowcount', cursor.rowcount)
+        print('lastrowid na mão', lastIdFromSelect)
+        print('rownumber', cursor.rownumber)
 
+    connection.commit() 
 
-        print()
-        print('FOR 2:')
-        cursor.scroll(0, 'absolute')
-        for row in cursor.fetchall():
-            print(row)
-    connection.commit()
 
 
