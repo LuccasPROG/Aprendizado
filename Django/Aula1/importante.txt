@@ -1,0 +1,8 @@
+Comandos Importantes sobre Djanggo
+
+#INICIA UM PROJETO Djanggo
+django-admin startproject project .
+
+
+#INICIA O SERVIDOR
+python manage.py runserver
