@@ -62,6 +62,7 @@ class ProdutoRepository:
         )
         self.banco.connection.commit()
     def delete(self, id):
+
         delete3 = (f'delete from {self.banco.TABLE_NAME} where id = ? ')
 
         self.banco.cursor.execute(
@@ -69,3 +70,11 @@ class ProdutoRepository:
         )
 
         self.banco.connection.commit()
+
+    def verifica_codigo(self, code):
+        verifica = (f'select id, code from {self.banco.TABLE_NAME} where code = ?')
+        self.banco.cursor.execute(
+            verifica, (code,)
+        )
+        verificado = self.banco.cursor.fetchone()
+        return verificado
