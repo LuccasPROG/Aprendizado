@@ -110,6 +110,10 @@ celerybeat-schedule
 # dotenv
 .env
 
+#Static/
+static
+static/
+media/
 # virtualenv
 .venv
 venv/
@@ -141,3 +145,6 @@ media/
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+
+#tira local_settings.py do GITHUB
+project/local_settings.py
