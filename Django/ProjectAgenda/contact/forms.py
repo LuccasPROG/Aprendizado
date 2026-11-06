@@ -64,7 +64,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         min_length=3,
     )
-    last_name = forms.EmailField()
+    email = forms.EmailField()
 
     class Meta:
         model = User
